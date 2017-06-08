@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF0F51AC-298C-41FB-B2D2-327BCCFD5596}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JFMonitor</RootNamespace>
+    <AssemblyName>JFMonitor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CYQ.Data">
+      <HintPath>..\CYQ.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.OPCSiemensDAAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Interop.OPCSiemensDAAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="SiemensSMARTOPCdotNETLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiemensSMARTOPCdotNETLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CItemID.cs" />
+    <Compile Include="OPC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RealData.cs" />
+    <Compile Include="TableNames.cs" />
+    <Compile Include="历史曲线.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="历史曲线.Designer.cs">
+      <DependentUpon>历史曲线.cs</DependentUpon>
+    </Compile>
+    <Compile Include="待机画面.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="待机画面.Designer.cs">
+      <DependentUpon>待机画面.cs</DependentUpon>
+    </Compile>
+    <Compile Include="手动操作.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="手动操作.Designer.cs">
+      <DependentUpon>手动操作.cs</DependentUpon>
+    </Compile>
+    <Compile Include="设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="设置.Designer.cs">
+      <DependentUpon>设置.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="历史曲线.resx">
+      <DependentUpon>历史曲线.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="待机画面.resx">
+      <DependentUpon>待机画面.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="手动操作.resx">
+      <DependentUpon>手动操作.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="设置.resx">
+      <DependentUpon>设置.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bj1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wdbj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\君峰log1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\君峰科技图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮背景.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮背景HOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\返回11.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
